@@ -11,7 +11,7 @@ func main() {
 	cashbackServices := amount * 22 / 1000
 	cashbackNasiya := amount * 1 / 1000
 
-	fmt.Println("Кэшбек за сервисы(2.2%): ", cashbackServices)
-	fmt.Println("Кэшбек за рассрочку(0.1%): ", cashbackNasiya)
+	fmt.Println("Кэшбек за сервисы(2.2%): ", cashbackServices, "sum")
+	fmt.Println("Кэшбек за рассрочку(0.1%): ", cashbackNasiya, "sum")
 
 }

@@ -1,11 +1,21 @@
-package card
+package main
 
 import (
 	"fmt"
 	"strings"
 )
 
-func maskPAN(input string) {
+func main() {
+	fmt.Print("Введите номер карты: ")
+
+	var a, b, c, d string
+	n, _ := fmt.Scan(&a, &b, &c, &d)
+
+	input := a
+	if n > 1 {
+		input = a + b + c + d
+	}
+
 	normalized := strings.ReplaceAll(input, "-", "")
 
 	if len(normalized) != 16 {
@@ -27,6 +37,10 @@ func maskPAN(input string) {
 		return
 	}
 
+	fmt.Println("Нормализованный номер:", normalized)
+	fmt.Println("Длина: 16")
+
+	// Дополнительное задание
 	first4 := ""
 	last4 := ""
 
@@ -41,20 +55,4 @@ func maskPAN(input string) {
 
 	masked := first4 + " **** **** " + last4
 	fmt.Println("Карта:", masked)
-}
-func ExampleCalculate() {
-	fmt.Printf("%.2f\n", Calculate(amount: 1,              isAlifCard: true))
-	fmt.Printf("%.2f\n", Calculate(amount: 1,              isAlifCard: false))
-	fmt.Printf("%.2f\n", Calculate(amount: 50000,          isAlifCard: false))
-	fmt.Printf("%.2f\n", Calculate(amount: 50000,          isAlifCard: true))
-	fmt.Printf("%.2f\n", Calculate(amount: 110_000_000_00, isAlifCard: ...))
-	fmt.Printf("%.2f\n", Calculate(amount: 100_000_000_00, isAlifCard: ...))
-	fmt.Printf("%.2f\n", Calculate(amount: 100_000_000_00, isAlifCard: ...))
-	// Output:
-	// 0.00
-	// 1.45
-	// 0.00
-	// 29000.00
-	// 0.00
-	// 290000.00
 }
