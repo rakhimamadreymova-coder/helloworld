@@ -6,6 +6,8 @@ hello world
 
 package main
 
+/*commision*/
+
 import (
 	"fmt"
 	"strings"
